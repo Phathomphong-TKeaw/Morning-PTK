@@ -2,65 +2,154 @@
 <html lang="th"><head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>📈 หุ้นเด่นวันนี้</title>
+<title>Morning PTK — หุ้นเด่นวันนี้</title>
+<link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#0b0e16">
+<link rel="icon" href="icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="icon.svg">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Morning PTK">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <style>
-  :root{--bg:#0b0e16;--card:#161a28;--bd:#262b3d;--tx:#e7ecf5;--mut:#6b7689;
-        --buy:#16c784;--watch:#f0b90b;--sell:#ea3943;--accent:#5b6cff}
-  *{box-sizing:border-box} body{margin:0;background:var(--bg);color:var(--tx);
-    font:15px/1.5 -apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;
-    padding:max(12px,env(safe-area-inset-top)) 12px 32px}
-  h1{font-size:1.15rem;margin:.2rem 0 .1rem;display:flex;align-items:center;gap:.4rem}
-  .sub{color:var(--mut);font-size:.75rem;margin-bottom:1rem}
-  .grp{font-size:.7rem;letter-spacing:.06em;text-transform:uppercase;color:var(--mut);
-       margin:1.1rem 0 .5rem}
-  .card{background:linear-gradient(180deg,var(--card),#0f1320);border:1px solid var(--bd);
-        border-left-width:3px;border-radius:12px;padding:.7rem .8rem;margin-bottom:.6rem}
-  .row{display:flex;align-items:center;gap:.5rem}
-  .tk{font-weight:800;font-size:1.05rem} .mk{color:var(--mut);font-size:.68rem}
-  .pill{margin-left:auto;font-size:.68rem;font-weight:700;padding:.12rem .5rem;border-radius:20px}
-  .g-A,.g-B{background:rgba(22,199,132,.15);color:var(--buy)}
-  .g-C{background:rgba(240,185,11,.15);color:var(--watch)}
-  .g-D{background:rgba(234,57,67,.15);color:var(--sell)}
-  .setup{font-size:.83rem;margin:.35rem 0 .25rem}
-  .meta{color:var(--mut);font-size:.74rem} .meta b{color:var(--tx);font-weight:600}
-  .note{background:var(--card);border:1px solid var(--bd);border-radius:10px;
-        padding:.6rem .7rem;color:var(--mut);font-size:.78rem;margin-bottom:.8rem}
-  .empty{color:var(--mut);text-align:center;padding:2rem 0}
-  .ref{display:block;text-align:center;color:var(--accent);font-size:.8rem;
-       margin-top:1.2rem;text-decoration:none}
+  :root{--bg:#0b0e16;--bg2:#0f1320;--card:#161a28;--card2:#1c2133;--bd:#262b3d;
+        --bds:#333a52;--tx:#e7ecf5;--tx2:#aab3c5;--mut:#6b7689;
+        --buy:#16c784;--watch:#f0b90b;--sell:#ea3943;--accent:#5b6cff;--accent2:#7c8bff;
+        --ease:cubic-bezier(.22,1,.36,1)}
+  *{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+  body{margin:0;background:
+       radial-gradient(1200px 500px at 50% -10%,rgba(91,108,255,.10),transparent),var(--bg);
+       color:var(--tx);font:15px/1.5 -apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;
+       padding-bottom:calc(28px + env(safe-area-inset-bottom))}
+  .num{font-variant-numeric:tabular-nums}
+  /* header */
+  header{position:sticky;top:0;z-index:10;display:flex;align-items:center;gap:.6rem;
+         padding:max(10px,env(safe-area-inset-top)) 14px 10px;
+         background:rgba(11,14,22,.82);backdrop-filter:saturate(140%) blur(12px);
+         border-bottom:1px solid var(--bd)}
+  header .logo{width:30px;height:30px;flex:0 0 auto;filter:drop-shadow(0 1px 5px rgba(91,108,255,.4))}
+  .htxt{flex:1;min-width:0}
+  .brand{font-weight:800;font-size:1.02rem;letter-spacing:-.01em;
+         background:linear-gradient(90deg,var(--accent2),var(--buy));
+         -webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+  .fresh{display:flex;align-items:center;gap:.35rem;font-size:.72rem;color:var(--mut);margin-top:1px}
+  .dot{width:7px;height:7px;border-radius:50%;background:var(--mut);flex:0 0 auto}
+  .dot.ok{background:var(--buy);box-shadow:0 0 8px var(--buy)}
+  .dot.warn{background:var(--watch)} .dot.old{background:var(--sell)}
+  .refresh{flex:0 0 auto;width:38px;height:38px;border-radius:11px;border:1px solid var(--bd);
+           background:var(--card2);color:var(--tx2);font-size:1.1rem;cursor:pointer;
+           transition:transform var(--ease) .15s,border-color var(--ease) .15s}
+  .refresh:active{transform:scale(.9)} .refresh.spin{animation:spin .6s linear infinite}
+  @keyframes spin{to{transform:rotate(360deg)}}
+  /* body */
+  main{padding:14px}
+  .chips{display:flex;gap:.4rem;flex-wrap:wrap;margin-bottom:.9rem}
+  .chip{font-size:.72rem;font-weight:600;color:var(--tx2);background:var(--card);
+        border:1px solid var(--bd);border-radius:20px;padding:.22rem .6rem}
+  .banner{background:rgba(234,57,67,.1);border:1px solid rgba(234,57,67,.4);color:#ff9aa1;
+          border-radius:11px;padding:.6rem .75rem;font-size:.8rem;margin-bottom:.9rem}
+  .note{background:var(--card);border:1px solid var(--bd);border-radius:12px;
+        padding:.65rem .8rem;color:var(--tx2);font-size:.8rem;line-height:1.55;margin-bottom:1rem}
+  .grp{font-size:.7rem;letter-spacing:.07em;text-transform:uppercase;color:var(--mut);
+       font-weight:700;margin:1.1rem .2rem .55rem}
+  .card{position:relative;background:linear-gradient(180deg,var(--card),var(--bg2));
+        border:1px solid var(--bd);border-left:3px solid var(--bd);border-radius:14px;
+        padding:.8rem .85rem;margin-bottom:.65rem;cursor:pointer;
+        opacity:0;transform:translateY(8px);animation:rise .4s var(--ease) forwards;
+        transition:transform var(--ease) .15s,border-color var(--ease) .15s}
+  .card:active{transform:scale(.985)}
+  @keyframes rise{to{opacity:1;transform:none}}
+  .card.b-A,.card.b-B{border-left-color:var(--buy)} .card.b-C{border-left-color:var(--watch)}
+  .card.b-D{border-left-color:var(--sell)}
+  .top{display:flex;align-items:center;gap:.5rem}
+  .tk{font-weight:800;font-size:1.12rem;letter-spacing:-.01em}
+  .mk{font-size:.62rem;font-weight:700;color:var(--mut);background:var(--card2);
+      border:1px solid var(--bd);border-radius:5px;padding:.05rem .3rem}
+  .ext{margin-left:auto;color:var(--mut);font-size:.78rem}
+  .grade{font-size:.7rem;font-weight:800;padding:.12rem .5rem;border-radius:20px}
+  .g-A,.g-B{background:rgba(22,199,132,.16);color:var(--buy)}
+  .g-C{background:rgba(240,185,11,.16);color:var(--watch)}
+  .g-D{background:rgba(234,57,67,.16);color:var(--sell)}
+  .setup{font-size:.86rem;color:var(--tx);margin:.45rem 0 .5rem}
+  .entry{display:flex;align-items:center;gap:.4rem;background:var(--bg2);
+         border:1px solid var(--bd);border-radius:9px;padding:.35rem .55rem;font-size:.8rem}
+  .entry .lbl{color:var(--mut)} .entry .val{font-weight:700;color:var(--tx)}
+  .entry .hz{margin-left:auto;color:var(--tx2);font-size:.72rem}
+  .driver{color:var(--mut);font-size:.76rem;margin-top:.45rem;line-height:1.45}
+  .empty{color:var(--mut);text-align:center;padding:3rem 1rem}
+  footer{text-align:center;color:var(--mut);font-size:.72rem;padding:1.4rem 1rem 0}
 </style></head><body>
-<h1>📈 หุ้นเด่นวันนี้</h1>
-<div class="sub" id="sub">กำลังโหลด…</div>
-<div id="note"></div>
-<div id="body"></div>
-<a class="ref" href="#" onclick="load();return false">↻ โหลดใหม่</a>
+<header>
+  <svg class="logo" viewBox="0 0 32 32" aria-hidden="true"><defs><linearGradient id="l" x1="0" y1="1" x2="1" y2="0">
+    <stop offset="0" stop-color="#5b6cff"/><stop offset="1" stop-color="#16c784"/></linearGradient></defs>
+    <rect width="32" height="32" rx="8" fill="#0f1320"/>
+    <polyline points="6,22 13,15 18,19 26,8" fill="none" stroke="url(#l)" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
+    <circle cx="26" cy="8" r="2.6" fill="#16c784"/></svg>
+  <div class="htxt">
+    <div class="brand">Morning PTK</div>
+    <div class="fresh"><span class="dot" id="dot"></span><span id="fresh">กำลังโหลด…</span></div>
+  </div>
+  <button class="refresh" id="rf" aria-label="โหลดใหม่" onclick="load(true)">↻</button>
+</header>
+<main>
+  <div class="chips" id="chips"></div>
+  <div id="banner"></div>
+  <div id="note"></div>
+  <div id="body"></div>
+  <footer id="foot"></footer>
+</main>
 <script>
 const esc=s=>(s==null?'':String(s)).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
-function card(p){return `<div class="card g-${esc(p.grade)}" style="border-left-color:${
-  p.grade==='A'||p.grade==='B'?'var(--buy)':p.grade==='C'?'var(--watch)':'var(--sell)'}">
-  <div class="row"><span class="tk">${esc(p.ticker)}</span>
-    <span class="mk">${esc(p.market||'')}</span>
-    <span class="pill g-${esc(p.grade)}">${esc(p.grade)}</span></div>
-  <div class="setup">${esc(p.setup||p.key_driver||'')}</div>
-  <div class="meta">เข้า: <b>${esc(p.entry_zone||'-')}</b> · ${esc(p.time_horizon||'')}</div>
-  ${p.key_driver&&p.setup?`<div class="meta">${esc(p.key_driver)}</div>`:''}
-</div>`}
-async function load(){
+function rel(iso){
+  if(!iso) return '';
+  const s=(Date.now()-new Date(iso).getTime())/1000;
+  if(s<90) return 'เมื่อสักครู่';
+  const m=Math.round(s/60); if(m<60) return m+' นาทีที่แล้ว';
+  const h=Math.round(m/60); if(h<24) return h+' ชม.ที่แล้ว';
+  return Math.round(h/24)+' วันที่แล้ว';
+}
+function tvLink(t){return 'https://www.tradingview.com/symbols/'+encodeURIComponent(t)+'/';}
+function card(p,i){
+  const g=esc(p.grade);
+  return `<div class="card b-${g}" style="animation-delay:${i*45}ms" onclick="window.open('${tvLink(p.ticker)}','_blank')">
+    <div class="top">
+      <span class="tk">${esc(p.ticker)}</span>
+      <span class="mk">${esc(p.market||'US')}</span>
+      <span class="grade g-${g}">${g}</span>
+      <span class="ext">↗</span>
+    </div>
+    <div class="setup">${esc(p.setup||p.key_driver||'')}</div>
+    <div class="entry"><span class="lbl">เข้า</span><span class="val num">${esc(p.entry_zone||'-')}</span>
+      <span class="hz">${esc(p.time_horizon||'')}</span></div>
+    ${p.key_driver&&p.setup?`<div class="driver">${esc(p.key_driver)}</div>`:''}
+  </div>`;
+}
+async function load(spin){
+  const rf=document.getElementById('rf'); if(spin) rf.classList.add('spin');
   try{
     const r=await fetch('./picks.json?t='+Date.now());
     const d=await r.json();
-    const tBkk=(d.published_at_bkk||'').replace('T',' ').slice(0,16);
-    document.getElementById('sub').textContent=`${d.date} · อัปเดตล่าสุด ${tBkk} (เวลาไทย)`;
+    const sw=d.swing_picks||[], va=d.value_picks||[];
+    // freshness
+    const hrs=d.published_at_bkk?(Date.now()-new Date(d.published_at_bkk).getTime())/3.6e6:999;
+    const dot=document.getElementById('dot');
+    dot.className='dot '+(hrs<18?'ok':hrs<36?'warn':'old');
+    document.getElementById('fresh').textContent=`${d.date} · อัปเดต ${rel(d.published_at_bkk)}`;
+    document.getElementById('chips').innerHTML=
+      `<span class="chip">⚡ ${sw.length} swing</span><span class="chip">💎 ${va.length} value</span>`+
+      (hrs<18?`<span class="chip" style="color:var(--buy)">🟢 สด</span>`:'');
+    document.getElementById('banner').innerHTML=hrs>=36
+      ?`<div class="banner">⚠️ ข้อมูลเก่ากว่า ${Math.round(hrs/24)} วัน — รอ scan รอบใหม่จาก notebook</div>`:'';
     document.getElementById('note').innerHTML=d.scan_note?`<div class="note">${esc(d.scan_note)}</div>`:'';
-    const sw=d.swing_picks||[],va=d.value_picks||[];
     document.getElementById('body').innerHTML=
-      (sw.length?`<div class="grp">⚡ Swing (1-3 วัน)</div>`+sw.map(card).join(''):'')+
-      (va.length?`<div class="grp">💎 Value (6-18 เดือน)</div>`+va.map(card).join(''):'')+
-      (!sw.length&&!va.length?`<div class="empty">ยังไม่มี picks — รอ scan รอบถัดไป</div>`:'');
+      (sw.length?`<div class="grp">⚡ Swing · 1-3 วัน</div>`+sw.map(card).join(''):'')+
+      (va.length?`<div class="grp">💎 Value · 6-18 เดือน</div>`+va.map(card).join(''):'')+
+      (!sw.length&&!va.length?`<div class="empty">ยังไม่มี picks<br>รอ scan รอบถัดไป</div>`:'');
+    document.getElementById('foot').textContent='อัปเดตอัตโนมัติทุกครั้งที่ notebook สแกน · แตะการ์ดเพื่อดูกราฟ';
   }catch(e){
-    document.getElementById('sub').textContent='โหลดไม่ได้';
+    document.getElementById('fresh').textContent='โหลดไม่ได้';
     document.getElementById('body').innerHTML=`<div class="empty">${esc(e.message)}</div>`;
-  }
+  }finally{ setTimeout(()=>rf.classList.remove('spin'),500); }
 }
 load();
+document.addEventListener('visibilitychange',()=>{ if(!document.hidden) load(); });
 </script></body></html>
