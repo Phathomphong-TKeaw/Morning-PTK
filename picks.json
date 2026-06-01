@@ -1,70 +1,82 @@
 {
-  "date": "2026-06-01",
-  "scanned_at_utc": "2026-06-01T10:35:41",
-  "published_at_bkk": "2026-06-01T23:26:02+07:00",
+  "date": "2026-06-02",
+  "scanned_at_utc": "2026-06-01T18:59:18",
+  "published_at_bkk": "2026-06-02T02:44:37+07:00",
   "swing_picks": [
     {
       "rank": 1,
-      "ticker": "ABBV",
+      "ticker": "HOOD",
       "market": "US",
-      "setup": "MA alignment breakout with MACD buy signal",
+      "setup": "MA20 breakout with volume surge",
       "grade": "A",
-      "key_driver": "Price above MA20/MA50/MA200, MACD_hist 1.111 strong buy, uptrend confirmed",
-      "entry_zone": "210-218",
-      "time_horizon": "1-3 วัน"
+      "key_driver": "Strong MACD positive, 1.4x volume, price above all key MAs",
+      "entry_zone": "88-92",
+      "time_horizon": "1-3 days",
+      "current_price": 91.11,
+      "change_pct": -3.07
     },
     {
       "rank": 2,
-      "ticker": "TSLA",
+      "ticker": "QCOM",
       "market": "US",
-      "setup": "MA20 breakout with positive MACD momentum",
-      "grade": "A",
-      "key_driver": "Price 435.79 above MA20 421.39, MACD_hist 0.699 buy, strong uptrend MA50/MA200 aligned",
-      "entry_zone": "421-437",
-      "time_horizon": "1-3 วัน"
+      "setup": "Uptrend MA alignment with MACD buy",
+      "grade": "B",
+      "key_driver": "Price above MA20/50/200, MACD positive, mid-range positioning",
+      "entry_zone": "227-233",
+      "time_horizon": "2-3 days",
+      "current_price": 229.09,
+      "change_pct": -8.65
     },
     {
       "rank": 3,
-      "ticker": "BAC",
+      "ticker": "LLY",
       "market": "US",
-      "setup": "MA alignment with volume surge confirmation",
+      "setup": "Strong uptrend momentum continuation",
       "grade": "B",
-      "key_driver": "Price above all key MAs (MA20/MA50/MA200), MACD buy signal, 1.6x volume",
-      "entry_zone": "51-52",
-      "time_horizon": "1-3 วัน"
+      "key_driver": "MACD strong buy signal, price above all MAs, but near 52wk high limits upside",
+      "entry_zone": "1075-1090",
+      "time_horizon": "1-2 days",
+      "current_price": 1082.55,
+      "change_pct": -1.91
     }
   ],
   "value_picks": [
     {
       "rank": 1,
-      "ticker": "META",
+      "ticker": "NVDA",
       "market": "US",
-      "setup": "GARP quality compounder with strong FCF and ROE",
+      "setup": "Exceptional growth compounder at reasonable valuation",
       "grade": "A",
-      "key_driver": "FCF $25.6B positive, ROE 32.9%, PEG 0.37 excellent, EPS_G 62.4%, analyst PT $826.75 vs current $632.51 (31% upside)",
-      "entry_zone": "613-633",
-      "time_horizon": "6-18 เดือน"
+      "key_driver": "PEG 0.15 (exceptional), ROE 114.3%, FCF $46.3B, EPS growth 214.5%, upside 32% vs PT",
+      "entry_zone": "220-228",
+      "time_horizon": "6-18 months",
+      "current_price": 223.55,
+      "change_pct": 5.21
     },
     {
       "rank": 2,
-      "ticker": "NFLX",
+      "ticker": "MSFT",
       "market": "US",
-      "setup": "High-quality FCF generator with exceptional ROE",
+      "setup": "Quality GARP compounder with strong FCF",
       "grade": "A",
-      "key_driver": "FCF $26.0B positive, ROE 48.5% exceptional, PEG 0.32 excellent, analyst PT $114.56 vs $86.02 (33% upside), near_low 52wk",
-      "entry_zone": "86-93",
-      "time_horizon": "6-18 เดือน"
+      "key_driver": "ROE 34%, FCF $37.0B, PEG 1.17, upside 22% vs PT, uptrend MA alignment",
+      "entry_zone": "450-465",
+      "time_horizon": "6-18 months",
+      "current_price": 462.45,
+      "change_pct": 2.77
     },
     {
       "rank": 3,
-      "ticker": "AMZN",
+      "ticker": "META",
       "market": "US",
-      "setup": "Dominant FCF producer with strong ROE and growth",
+      "setup": "High-growth value with exceptional PEG",
       "grade": "B",
-      "key_driver": "FCF $9.8B positive, ROE 24.3%, PEG 0.42 excellent, EPS_G 74.8%, analyst PT $312.79 vs $270.64 (16% upside)",
-      "entry_zone": "247-271",
-      "time_horizon": "6-18 เดือน"
+      "key_driver": "PEG 0.35, ROE 32.9%, FCF $25.6B, EPS growth 62.4%, upside 36% vs PT, but MA sell signals warrant patience",
+      "entry_zone": "595-615",
+      "time_horizon": "6-18 months",
+      "current_price": 604.24,
+      "change_pct": -4.42
     }
   ],
-  "scan_note": "Swing: ABBV and TSLA show cleanest MA alignment with strong MACD buy signals and uptrend confirmation; BAC solid but lower momentum. Value: META and NFLX offer exceptional PEG ratios (<0.4) with fortress FCF and ROE >30%; AMZN solid but near_high 52wk positioning. WMT excluded (PEG 2.10 >1.5 threshold, downtrend). OXY excluded (ROE 4.1% <15%, downtrend). PLTR excluded (PE 175.9 extreme valuation despite growth). NKE/NU excluded from swing (below MA20 or downtrend)."
+  "scan_note": "Swing: HOOD shows cleanest momentum setup with volume surge and clear MA breakout; LLY near 52wk high limits risk/reward. Value: NVDA exceptional PEG 0.15 with massive FCF justifies premium; MSFT stable quality; META offers growth at discount but technical weakness suggests waiting for MA retest. AMZN/NFLX near 52wk highs excluded from value despite quality. OXY excluded: ROE 4.1% fails quality threshold."
 }
