@@ -31,6 +31,7 @@
   .brand{font-weight:800;font-size:1.02rem;letter-spacing:-.01em;
          background:linear-gradient(90deg,var(--accent2),var(--buy));
          -webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+  .brand-sub{font-size:.62rem;font-weight:600;color:var(--mut);letter-spacing:.06em;margin-top:-1px}
   .fresh{display:flex;align-items:center;gap:.35rem;font-size:.72rem;color:var(--mut);margin-top:1px}
   .dot{width:7px;height:7px;border-radius:50%;background:var(--mut);flex:0 0 auto}
   .dot.ok{background:var(--buy);box-shadow:0 0 8px var(--buy)}
@@ -64,7 +65,10 @@
   .tk{font-weight:800;font-size:1.12rem;letter-spacing:-.01em}
   .mk{font-size:.62rem;font-weight:700;color:var(--mut);background:var(--card2);
       border:1px solid var(--bd);border-radius:5px;padding:.05rem .3rem}
-  .ext{margin-left:auto;color:var(--mut);font-size:.78rem}
+  .px{margin-left:auto;display:flex;align-items:baseline;gap:.35rem;font-size:.9rem;font-weight:800}
+  .px b{font-size:.74rem;font-weight:700}
+  .px .up{color:var(--buy)} .px .down{color:var(--sell)}
+  .ext{color:var(--mut);font-size:.78rem;margin-left:.4rem}
   .grade{font-size:.7rem;font-weight:800;padding:.12rem .5rem;border-radius:20px}
   .g-A,.g-B{background:rgba(22,199,132,.16);color:var(--buy)}
   .g-C{background:rgba(240,185,11,.16);color:var(--watch)}
@@ -86,6 +90,7 @@
     <circle cx="26" cy="8" r="2.6" fill="#16c784"/></svg>
   <div class="htxt">
     <div class="brand">Morning PTK</div>
+    <div class="brand-sub">by PTK</div>
     <div class="fresh"><span class="dot" id="dot"></span><span id="fresh">กำลังโหลด…</span></div>
   </div>
   <button class="refresh" id="rf" aria-label="โหลดใหม่" onclick="load(true)">↻</button>
@@ -115,6 +120,8 @@ function card(p,i){
       <span class="tk">${esc(p.ticker)}</span>
       <span class="mk">${esc(p.market||'US')}</span>
       <span class="grade g-${g}">${g}</span>
+      ${p.current_price!=null?`<span class="px num">$${p.current_price}${
+        p.change_pct!=null?` <b class="${p.change_pct>=0?'up':'down'}">${p.change_pct>=0?'+':''}${p.change_pct}%</b>`:''}</span>`:''}
       <span class="ext">↗</span>
     </div>
     <div class="setup">${esc(p.setup||p.key_driver||'')}</div>
