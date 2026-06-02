@@ -1,82 +1,82 @@
 {
   "date": "2026-06-02",
-  "scanned_at_utc": "2026-06-01T18:59:18",
-  "published_at_bkk": "2026-06-02T02:44:37+07:00",
+  "scanned_at_utc": "2026-06-02T13:48:04",
+  "published_at_bkk": "2026-06-02T20:48:06+07:00",
   "swing_picks": [
     {
       "rank": 1,
-      "ticker": "HOOD",
+      "ticker": "MSFT",
       "market": "US",
-      "setup": "MA20 breakout with volume surge",
+      "setup": "MA20/MA50 breakout above 200-day resistance, MACD positive histogram",
       "grade": "A",
-      "key_driver": "Strong MACD positive, 1.4x volume, price above all key MAs",
-      "entry_zone": "88-92",
+      "key_driver": "Strong uptrend alignment, MA20 buy signal, MACD momentum 3.4",
+      "entry_zone": "430-445",
       "time_horizon": "1-3 days",
-      "current_price": 91.11,
-      "change_pct": -3.07
+      "current_price": 446.34,
+      "change_pct": -1.34
     },
     {
       "rank": 2,
-      "ticker": "QCOM",
+      "ticker": "LLY",
       "market": "US",
-      "setup": "Uptrend MA alignment with MACD buy",
-      "grade": "B",
-      "key_driver": "Price above MA20/50/200, MACD positive, mid-range positioning",
-      "entry_zone": "227-233",
-      "time_horizon": "2-3 days",
-      "current_price": 229.09,
-      "change_pct": -8.65
+      "setup": "MA20/MA50 bullish stack, MACD buy signal, ATR expansion",
+      "grade": "A",
+      "key_driver": "Uptrend confirmed, MACD histogram 4.9 (strongest), volume building",
+      "entry_zone": "1040-1065",
+      "time_horizon": "1-3 days",
+      "current_price": 1062.95,
+      "change_pct": -1.61
     },
     {
       "rank": 3,
-      "ticker": "LLY",
+      "ticker": "HOOD",
       "market": "US",
-      "setup": "Strong uptrend momentum continuation",
+      "setup": "MA20 breakout from consolidation, MACD positive, mid-range positioning",
       "grade": "B",
-      "key_driver": "MACD strong buy signal, price above all MAs, but near 52wk high limits upside",
-      "entry_zone": "1075-1090",
-      "time_horizon": "1-2 days",
-      "current_price": 1082.55,
-      "change_pct": -1.91
+      "key_driver": "Clean uptrend, RSI 60 neutral, ATR 5.08 for tight stops",
+      "entry_zone": "82-88",
+      "time_horizon": "1-3 days",
+      "current_price": 88.32,
+      "change_pct": -2.13
     }
   ],
   "value_picks": [
     {
       "rank": 1,
-      "ticker": "NVDA",
+      "ticker": "MSFT",
       "market": "US",
-      "setup": "Exceptional growth compounder at reasonable valuation",
+      "setup": "GARP quality compounder, FCF fortress, uptrend entry",
       "grade": "A",
-      "key_driver": "PEG 0.15 (exceptional), ROE 114.3%, FCF $46.3B, EPS growth 214.5%, upside 32% vs PT",
-      "entry_zone": "220-228",
+      "key_driver": "FCF $37.0B, ROE 34%, PEG 1.13, PT $560.89 (+25.7%), analyst upside strong",
+      "entry_zone": "430-445",
       "time_horizon": "6-18 months",
-      "current_price": 223.55,
-      "change_pct": 5.21
+      "current_price": 446.34,
+      "change_pct": -1.34
     },
     {
       "rank": 2,
-      "ticker": "MSFT",
+      "ticker": "AMZN",
       "market": "US",
-      "setup": "Quality GARP compounder with strong FCF",
+      "setup": "Exceptional PEG 0.41, strong FCF $9.8B, ROE 24.3%, pullback entry",
       "grade": "A",
-      "key_driver": "ROE 34%, FCF $37.0B, PEG 1.17, upside 22% vs PT, uptrend MA alignment",
-      "entry_zone": "450-465",
+      "key_driver": "EPS growth 74.8%, PT $312.79 (+22.6%), mid-range valuation, MA50 support",
+      "entry_zone": "248-258",
       "time_horizon": "6-18 months",
-      "current_price": 462.45,
-      "change_pct": 2.77
+      "current_price": 255.16,
+      "change_pct": -1.73
     },
     {
       "rank": 3,
-      "ticker": "META",
+      "ticker": "NFLX",
       "market": "US",
-      "setup": "High-growth value with exceptional PEG",
+      "setup": "Best-in-class ROE 48.5%, PEG 0.32, FCF $26.0B, oversold RSI 32.9",
       "grade": "B",
-      "key_driver": "PEG 0.35, ROE 32.9%, FCF $25.6B, EPS growth 62.4%, upside 36% vs PT, but MA sell signals warrant patience",
-      "entry_zone": "595-615",
+      "key_driver": "EPS growth 86.4%, PT $114.56 (+35.8%), near 52wk low entry, low debt",
+      "entry_zone": "82-88",
       "time_horizon": "6-18 months",
-      "current_price": 604.24,
-      "change_pct": -4.42
+      "current_price": 84.3,
+      "change_pct": -1.61
     }
   ],
-  "scan_note": "Swing: HOOD shows cleanest momentum setup with volume surge and clear MA breakout; LLY near 52wk high limits risk/reward. Value: NVDA exceptional PEG 0.15 with massive FCF justifies premium; MSFT stable quality; META offers growth at discount but technical weakness suggests waiting for MA retest. AMZN/NFLX near 52wk highs excluded from value despite quality. OXY excluded: ROE 4.1% fails quality threshold."
+  "scan_note": "Market uptrend intact. SWING: MSFT/LLY show strongest MACD momentum with clean MA alignment; avoid AMD (overbought RSI 73, near high). VALUE: MSFT/AMZN offer best risk/reward with fortress FCF + reasonable PEG; NFLX oversold but downtrend risk-wait for MA20 recross. META attractive PEG 0.35 but in downtrend; skip for now."
 }
