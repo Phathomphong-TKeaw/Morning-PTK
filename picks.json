@@ -1,43 +1,43 @@
 {
-  "date": "2026-06-03",
-  "scanned_at_utc": "2026-06-03T12:46:23",
-  "published_at_bkk": "2026-06-03T19:46:25+07:00",
+  "date": "2026-06-04",
+  "scanned_at_utc": "2026-06-03T17:18:23",
+  "published_at_bkk": "2026-06-04T00:18:25+07:00",
   "swing_picks": [
     {
       "rank": 1,
-      "ticker": "MSFT",
+      "ticker": "ABBV",
       "market": "US",
-      "setup": "MA20/MA50 breakout above 200-day, MACD histogram strong positive",
+      "setup": "MA20/MA50 breakout, MACD buy, uptrend alignment",
       "grade": "A",
-      "key_driver": "Uptrend confirmed, MACD_hist=3.104 buy signal, price above all key MAs",
-      "entry_zone": "435-445",
-      "time_horizon": "1-3 days",
-      "current_price": 441.31,
-      "change_pct": 0.66
+      "key_driver": "Clean MA stack (211→208→217), MACD positive, mid-range 52wk, tight ATR control",
+      "entry_zone": "218-222",
+      "time_horizon": "1-3 วัน",
+      "current_price": 219.3,
+      "change_pct": 2.0
     },
     {
       "rank": 2,
-      "ticker": "LLY",
+      "ticker": "HOOD",
       "market": "US",
-      "setup": "MA alignment bullish, MACD histogram elevated at 4.918",
-      "grade": "A",
-      "key_driver": "Strong uptrend, price above MA20/MA50/MA200, momentum sustained",
-      "entry_zone": "1050-1070",
-      "time_horizon": "1-3 days",
-      "current_price": 1064.15,
-      "change_pct": -0.17
+      "setup": "MA20 breakout above MA50/MA200 gap, volume surge 0.6x",
+      "grade": "B",
+      "key_driver": "MACD buy, uptrend, mid-range 52wk, ATR 5.14 for clean stops",
+      "entry_zone": "80-84",
+      "time_horizon": "1-3 วัน",
+      "current_price": 83.18,
+      "change_pct": -4.52
     },
     {
       "rank": 3,
-      "ticker": "ABBV",
+      "ticker": "F",
       "market": "US",
-      "setup": "Tight MA stack (MA20=210.73, MA50=208.02), volume surge 1.1x, MACD buy",
+      "setup": "MA alignment uptrend, MACD buy, lowest ATR volatility",
       "grade": "B",
-      "key_driver": "Clean uptrend, ATR=5.39 provides clear risk definition, mid-range 52wk",
-      "entry_zone": "213-218",
-      "time_horizon": "1-3 days",
-      "current_price": 215.4,
-      "change_pct": 0.19
+      "key_driver": "Clean MA stack (14.16→12.82→12.57), tight risk/reward, mid-range 52wk",
+      "entry_zone": "15.2-15.9",
+      "time_horizon": "1-3 วัน",
+      "current_price": 15.66,
+      "change_pct": -3.0
     }
   ],
   "value_picks": [
@@ -45,38 +45,39 @@
       "rank": 1,
       "ticker": "MSFT",
       "market": "US",
-      "setup": "GARP quality compounder, FCF=$37.0B positive, ROE=34.0%, PEG=1.12",
+      "setup": "GARP quality compounder, FCF fortress, uptrend MA alignment",
       "grade": "A",
-      "key_driver": "Fortress balance sheet, strong FCF generation, analyst PT=$560.89 (+27% upside), mid-range valuation",
-      "entry_zone": "435-445",
-      "time_horizon": "6-18 months",
-      "current_price": 441.31,
-      "change_pct": 0.66
+      "key_driver": "FCF $37.0B, ROE 34.0%, PEG 1.12, analyst PT $560.89 (+32% upside), MACD buy, mid-range 52wk",
+      "entry_zone": "420-428",
+      "time_horizon": "6-18 เดือน",
+      "current_price": 424.53,
+      "change_pct": -3.17
     },
     {
       "rank": 2,
-      "ticker": "AMZN",
+      "ticker": "META",
       "market": "US",
-      "setup": "Exceptional PEG=0.42 (growth discount), FCF=$9.8B, ROE=24.3%, analyst PT=$312.79",
+      "setup": "High-growth GARP, strong FCF, reasonable valuation vs growth",
       "grade": "A",
-      "key_driver": "EPS growth 74.8% vs PE 31.6, deep value on growth metrics, mid-range 52wk positioning",
-      "entry_zone": "250-260",
-      "time_horizon": "6-18 months",
-      "current_price": 256.52,
-      "change_pct": 0.04
+      "key_driver": "FCF $25.6B, ROE 32.9%, PEG 0.36, EPS_G 62.4%, analyst PT $826.75 (+34% upside), mid-range 52wk",
+      "entry_zone": "610-620",
+      "time_horizon": "6-18 เดือน",
+      "current_price": 615.5,
+      "change_pct": 2.54
     },
     {
       "rank": 3,
-      "ticker": "NFLX",
+      "ticker": "AMZN",
       "market": "US",
-      "setup": "Extreme PEG=0.31, ROE=48.5%, FCF=$26.0B, analyst PT=$114.56 (+37% upside)",
+      "setup": "Exceptional PEG 0.41, strong FCF, pullback entry opportunity",
       "grade": "B",
-      "key_driver": "Exceptional FCF yield, high ROE, lowest PEG in cohort; near 52wk low offers entry, but MACD/trend currently weak",
-      "entry_zone": "80-85",
-      "time_horizon": "6-18 months",
-      "current_price": 83.33,
-      "change_pct": -0.07
+      "key_driver": "FCF $9.8B, ROE 24.3%, PEG 0.41, EPS_G 74.8%, analyst PT $312.79 (+26% upside), sideways trend near MA50",
+      "entry_zone": "245-250",
+      "time_horizon": "6-18 เดือน",
+      "current_price": 247.99,
+      "change_pct": -3.29
     }
   ],
-  "scan_note": "Swing: MSFT and LLY show cleanest MA alignment + MACD confirmation; ABBV offers tighter ATR risk. Value: MSFT bridges both lists (uptrend + quality); AMZN/NFLX offer exceptional PEG compression vs growth; META excluded (downtrend, MACD sell), PLTR excluded (PE 172.9 extreme, FCF modest). NVDA near 52wk high limits value entry despite best PEG=0.15."
+  "scan_note": "Swing: ABBV offers cleanest technical setup with tight MA stack and controlled volatility; HOOD/F provide secondary momentum with volume confirmation. Value: MSFT/META dominate on FCF+ROE+PEG quality with analyst upside >30%; AMZN pullback near MA50 offers exceptional growth-to-valuation ratio (PEG 0.41). QCOM/LLY excluded from swing (near_high 52wk); NVDA/PLTR excluded from value (NVDA sideways MACD sell, PLTR extreme PE 161.8); NFLX excluded (downtrend, near_low 52wk).",
+  "portfolio": null
 }
