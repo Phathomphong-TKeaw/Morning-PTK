@@ -50,6 +50,25 @@
           border-radius:11px;padding:.6rem .75rem;font-size:.8rem;margin-bottom:.9rem}
   .note{background:var(--card);border:1px solid var(--bd);border-radius:12px;
         padding:.65rem .8rem;color:var(--tx2);font-size:.8rem;line-height:1.55;margin-bottom:1rem}
+  /* portfolio (B-7) */
+  .pf{background:linear-gradient(180deg,var(--card2),var(--bg2));border:1px solid var(--bds);
+      border-radius:14px;padding:.85rem;margin-bottom:1.1rem}
+  .pf-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:.35rem}
+  .pf-head .grp{margin:0}
+  .pf-mv{font-size:1.18rem;font-weight:800;letter-spacing:-.01em}
+  .pf-sum{display:flex;align-items:baseline;justify-content:space-between;gap:.5rem;
+          flex-wrap:wrap;margin-bottom:.55rem}
+  .pf-pnl{font-size:.95rem;font-weight:800}
+  .pf-pnl.up{color:var(--buy)} .pf-pnl.down{color:var(--sell)}
+  .pf-meta{font-size:.72rem;color:var(--mut)}
+  .pf-row{display:flex;align-items:center;gap:.5rem;padding:.42rem 0;border-top:1px solid var(--bd)}
+  .pf-tk{font-weight:700;font-size:.9rem}
+  .pf-cap{font-size:.6rem;font-weight:700;color:var(--sell);background:rgba(234,57,67,.14);
+          border-radius:5px;padding:.05rem .3rem;margin-left:.3rem}
+  .pf-w{margin-left:auto;color:var(--tx2);font-size:.8rem}
+  .pf-pl{font-size:.85rem;font-weight:700;min-width:60px;text-align:right}
+  .pf-pl.up{color:var(--buy)} .pf-pl.down{color:var(--sell)}
+  .pf-flag{font-size:.72rem;color:#ff9aa1;margin-top:.5rem}
   .grp{font-size:.7rem;letter-spacing:.07em;text-transform:uppercase;color:var(--mut);
        font-weight:700;margin:1.1rem .2rem .55rem}
   .card{position:relative;background:linear-gradient(180deg,var(--card),var(--bg2));
@@ -99,6 +118,7 @@
   <div class="chips" id="chips"></div>
   <div id="banner"></div>
   <div id="note"></div>
+  <div id="pf"></div>
   <div id="body"></div>
   <footer id="foot"></footer>
 </main>
@@ -113,6 +133,26 @@ function rel(iso){
   return Math.round(h/24)+' วันที่แล้ว';
 }
 function tvLink(t){return 'https://www.tradingview.com/symbols/'+encodeURIComponent(t)+'/';}
+function usd(n){return '$'+Math.round(Math.abs(n)).toLocaleString('en-US');}
+function signed(n){return (n>=0?'+':'-')+usd(n);}
+function pct(n){return n==null?'—':(n>=0?'+':'')+n+'%';}
+function portfolioHTML(pf){
+  const t=pf.totals||{}, up=t.unrealized_pnl||0, cls=up>=0?'up':'down';
+  const rows=(pf.positions||[]).map(p=>`
+    <div class="pf-row">
+      <span class="pf-tk">${esc(p.ticker)}${p.over_cap?'<span class="pf-cap">เกินกฎ</span>':''}</span>
+      <span class="pf-w num">${p.weight_pct!=null?p.weight_pct+'%':''}</span>
+      <span class="pf-pl num ${p.unrealized_pct>=0?'up':'down'}">${pct(p.unrealized_pct)}</span>
+    </div>`).join('');
+  const flags=(pf.flags||[]).map(f=>`<div class="pf-flag">⚠️ ${esc(f)}</div>`).join('');
+  return `<div class="pf">
+    <div class="pf-head"><span class="grp">📊 พอร์ตของฉัน</span>
+      <span class="pf-mv num">${usd(t.market_value||0)}</span></div>
+    <div class="pf-sum">
+      <span class="pf-pnl ${cls} num">${signed(up)}${t.unrealized_pct!=null?` (${pct(t.unrealized_pct)})`:''}</span>
+      <span class="pf-meta num">ลงทุน ${t.deployed_pct!=null?t.deployed_pct+'%':'—'} · สด ${usd(t.cash_est||0)}</span>
+    </div>${rows}${flags}</div>`;
+}
 function card(p,i){
   const g=esc(p.grade);
   return `<div class="card b-${g}" style="animation-delay:${i*45}ms" onclick="window.open('${tvLink(p.ticker)}','_blank')">
@@ -147,6 +187,7 @@ async function load(spin){
     document.getElementById('banner').innerHTML=hrs>=36
       ?`<div class="banner">⚠️ ข้อมูลเก่ากว่า ${Math.round(hrs/24)} วัน — รอ scan รอบใหม่จาก notebook</div>`:'';
     document.getElementById('note').innerHTML=d.scan_note?`<div class="note">${esc(d.scan_note)}</div>`:'';
+    document.getElementById('pf').innerHTML=d.portfolio?portfolioHTML(d.portfolio):'';
     document.getElementById('body').innerHTML=
       (sw.length?`<div class="grp">⚡ Swing · 1-3 วัน</div>`+sw.map(card).join(''):'')+
       (va.length?`<div class="grp">💎 Value · 6-18 เดือน</div>`+va.map(card).join(''):'')+
